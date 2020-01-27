@@ -19,13 +19,8 @@ end
 #   sudo easy_install pip
 #   sudo apt-get install python-dev python-pip -q -y
 #alias python=python3
-#   sudo apt-get install default-jre -y
-
  bash 'install python and etc'do
    code <<-EOH
-   ARG DEBIAN_FRONTEND=noninteractive
-   RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-   sudo apt-get install dialog apt-utils -y
    sudo apt-get update -y
    sudo apt-get upgrade -y
    sudo apt-get install nginx -y
@@ -37,7 +32,6 @@ end
    sudo apt-get install python3-pip -y
    sudo apt-get install python-setuptools -y
    sudo apt-get install python3-pytest -y
-   sudo apt-get install default-jre -y
    EOH
  end
 #package 'python'
